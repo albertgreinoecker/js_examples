@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 05: OO-Programming</title>
+     <script src="data/teams_fifa22.js"></script>
+     <script src="data/players_fifa22.js"></script>
+</head>
+<body>
+Press <b>F12</b> to see the results
+<br/><br/><br/><br/><br/>
+
+<select id="teams" onchange="change_teams">
+</select>
+
+<select id="team_members" onchange="change_teams">
+</select>
+
+<img id="player_img">
+</img>
+
+<script>
+function change_teams(e)
+{
+    let teams_sel = e.target;
+    let v = teams_sel.value;
+    let t = teams_sel.options[teams_sel.selectedIndex].text;
+    console.log(v + t + e);
+    let team_members_sel = document.getElementById("team_members");
+
+    let current_players = players.filter(p => p.Club === t);
+    console.log(current_players);
+    team_members_sel.innerHTML = "";
+    current_players.forEach(d => team_members_sel.add(new Option(d.Name,d.ID)));
+}
+
+function change_team_player(e)
+{
+    let player_sel = e.target;
+    let v = player_sel.value;
+    let t = player_sel.options[player_sel.selectedIndex].text;
+
+    let curr_player = players.find(p => p.Name === t);
+    console.log(curr_player.PhotoUrl);
+    let player_img = document.getElementById("player_img");
+    player_img.src = curr_player.PhotoUrl;
+
+}
+console.log(teams);
+console.log(players[10]);
+
+let teams_sel = document.getElementById("teams");
+teams.forEach(d => teams_sel.add(new Option(d.Name,d.ID)));
+teams_sel.addEventListener("change", change_teams);
+let team_members_sel = document.getElementById("team_members");
+team_members_sel.addEventListener("change", change_team_player);
+</script>
+</body>
+</html>

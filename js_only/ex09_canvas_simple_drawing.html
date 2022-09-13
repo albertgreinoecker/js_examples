@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 03: Arrays</title>
+</head>
+<body>
+
+<img id="mb" width="25" height="25"  src="img/5mb.png" alt="5mb" style="visibility: hidden">
+<canvas id="c1" width="800" height="600"  style="border:1px solid #000000;"></canvas>
+
+<script>
+    window.onload = function ()
+    {
+        var canvas = document.getElementById("c1"); //the canvas element where drawing should be applied to
+        var ctx = canvas.getContext("2d"); //Pencil used for drawing
+        ctx.fillStyle = "#FF0000"; //current drawing color set to red
+        ctx.fillRect(100, 100, 150, 75);  //x,y,w,h
+
+        ctx.font = "20px Arial";
+        ctx.strokeText("This is a text", 100, 100);
+        ctx.fillText("This is a fill text", 300,300);
+
+        let img = document.getElementById("mb");
+        ctx.drawImage(img, 200, 200,50,50); //x,y,w,h
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 03: Arrays</title>
+</head>
+<body>
+Press <b>F12</b> to see the results
+<br/><br/><br/><br/><br/>
+
+
+<script>
+    let arr = ['N','S','E','W'];
+    arr.forEach(function (currentValue, index, arr) //index and arr can also be omitted
+    {
+        console.log(currentValue, index, arr)
+    })
+
+    let arr2 = arr.map(function(currentValue)
+    {
+        return '_' + currentValue + '_';
+    });
+    console.log(arr2);
+
+    const months = [1,6,3,11,12,2];
+    let month_filter = months.filter(function(currentvalue)
+    {
+        return currentvalue >= 6;
+    });
+
+    console.log(month_filter)
+
+    let month_filter2 = months.filter((currentvalue) => currentvalue >= 6);
+
+    console.log(month_filter2)
+
+    let numbers = [1,2,3,4];
+    let sum = numbers.reduce( (prev, current) => prev+current);
+    console.log("Summe %d:", sum);
+</script>
+</body>
+</html>

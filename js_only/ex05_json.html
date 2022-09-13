@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 05: OO-Programming</title>
+</head>
+<body>
+Press <b>F12</b> to see the results
+<br/><br/><br/><br/><br/>
+
+
+<script>
+
+    let person = {"first_name" : "John", "last_name" : "Doe"};
+    console.log(person);
+    console.log(person["first_name"]);
+    person["age"] = 12;
+    console.log(person);
+
+    let person_arr = [{"first_name" : "John", "last_name" : "Doe"}, {"first_name" : "Nikolaus", "last_name" : "Wirth"}];
+    console.log(person_arr);
+
+    let person_from_str = JSON.parse('{"first_name" : "John", "last_name" : "Doe"}');
+    console.log(person_from_str);
+
+    var person_str = JSON.stringify(person);
+    console.log(person_str);
+</script>
+</body>
+</html>

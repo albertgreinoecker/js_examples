@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 07: Console output</title>
+     <script src="data/teams_fifa22.js"></script>
+     <script src="data/players_fifa22.js"></script>
+</head>
+<body>
+Press <b>F12</b> to see the results
+<br/><br/><br/><br/><br/>
+<button id="b">x</button>
+<script>
+    console.log("%s (%d)", "Hubert", 20);
+    let z = 12.234234234324;
+    console.log("zahl:%f (gerundet %f)", z,z.toFixed(2));
+
+
+    var style = "color: red; background: #eee ";
+    console.log("%c CSS",  style);
+
+    let person = {"first_name" : "John", "last_name" : "Doe"};
+    console.dir(person);
+    console.dirxml(person);
+    console.log(person);
+
+    console.assert(true, "Bedingung erfüllt, nichts passiert");
+    console.assert(false, "Bedingung NICHT erfüllt!!");
+
+    let button = document.getElementById("b");
+    console.log(button);
+    console.dir(button);
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 05: OO-Programming</title>
+</head>
+<body>
+Press <b>F12</b> to see the results
+<br/><br/><br/><br/><br/>
+
+
+<script>
+    class Person //since ES6 (EcmaScript 2015)
+    {
+        constructor(first_name, last_name, age)
+        {
+            this.first_name = first_name;
+            this.last_name = last_name;
+            this.age = age;
+        }
+
+        name()
+        {
+            return this.first_name + " " + this.last_name;
+        }
+    }
+
+    p1 = new Person("John", "von Neumann", 120);
+    console.log(p1);
+    console.log(p1.name());
+
+    console.log(p1.first_name);
+
+
+    class Student extends  Person
+    {
+        constructor(first_name, last_name, age, semester)
+        {
+            super(first_name, last_name, age);
+            this.semester = semester;
+        }
+        print()
+        {
+            return super.name() +  " Sem:" + this.semester;
+        }
+    }
+
+    let s1 = new Student("Nikolaus", "Wirth", 75, 1);
+    console.log(s1);
+    console.log(s1.print());
+</script>
+</body>
+</html>
