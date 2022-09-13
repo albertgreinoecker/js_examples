@@ -48,6 +48,27 @@ Press <b>F12</b> to see the results
     let s1 = new Student("Nikolaus", "Wirth", 75, 1);
     console.log(s1);
     console.log(s1.print());
+
+    let s2 = {
+        first_name: "Nikolaus",
+        last_name: "Wirth",
+        department:
+            {
+                name: "ETH ",
+                address: "Zürich",
+                print()
+                {
+                    console.log(this.name, this.address);
+                }
+            },
+        print()
+            {
+                this.department.print();
+                console.log(this.first_name, this.last_name);
+            }
+    }
+    console.log("Ausgabe von s2:");
+    s2.print();
 </script>
 </body>
 </html>
