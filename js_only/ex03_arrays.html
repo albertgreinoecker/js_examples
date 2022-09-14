@@ -37,6 +37,13 @@ Press <b>F12</b> to see the results
     let numbers = [1,2,3,4];
     let sum = numbers.reduce( (prev, current) => prev+current);
     console.log("Summe %d:", sum);
+
+
+    let greaterZero = numbers.every((currentvalue) => currentvalue > 0 );
+    console.log("greaterZero:" + greaterZero);
+
+    let some = numbers.some((currentvalue) => currentvalue > 2 );
+    console.log("some:" + some);
 </script>
 </body>
 </html>
