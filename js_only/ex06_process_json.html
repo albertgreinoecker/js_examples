@@ -43,7 +43,6 @@ function change_team_player(e)
     let curr_player = players.find(p => p.Name === t);
     console.log(curr_player.PhotoUrl);
     let player_img = document.getElementById("player_img");
-    console.log(curr_player.PhotoUrl);
     player_img.src = curr_player.PhotoUrl;
 
 }
