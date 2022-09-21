@@ -13,7 +13,7 @@ Press <b>F12</b> to see the results
 <select id="teams" onchange="change_teams">
 </select>
 
-<select id="team_members" onchange="change_teams">
+<select id="team_members">
 </select>
 
 <img id="player_img">
@@ -22,16 +22,16 @@ Press <b>F12</b> to see the results
 <script>
 function change_teams(e)
 {
-    let teams_sel = e.target;
-    let v = teams_sel.value;
-    let t = teams_sel.options[teams_sel.selectedIndex].text;
+    let teams_sel = e.target; //which team is now selected
+    let v = teams_sel.value; //get the value of the selected team for further queries
+    let t = teams_sel.options[teams_sel.selectedIndex].text; //which text is associated with the value
     console.log(v + t + e);
-    let team_members_sel = document.getElementById("team_members");
 
-    let current_players = players.filter(p => p.Club === t);
+    let team_members_sel = document.getElementById("team_members");
+    let current_players = players.filter(p => p.Club === t); //get all players of the selected team
     console.log(current_players);
-    team_members_sel.innerHTML = "";
-    current_players.forEach(d => team_members_sel.add(new Option(d.Name,d.ID)));
+    team_members_sel.innerHTML = ""; //clear the player option box
+    current_players.forEach(d => team_members_sel.add(new Option(d.Name,d.ID))); //add all players to the option box
 }
 
 function change_team_player(e)
@@ -43,17 +43,20 @@ function change_team_player(e)
     let curr_player = players.find(p => p.Name === t);
     console.log(curr_player.PhotoUrl);
     let player_img = document.getElementById("player_img");
+    console.log(curr_player.PhotoUrl);
     player_img.src = curr_player.PhotoUrl;
 
 }
 console.log(teams);
 console.log(players[10]);
 
+//fill the teams option box with the team names
 let teams_sel = document.getElementById("teams");
 teams.forEach(d => teams_sel.add(new Option(d.Name,d.ID)));
 teams_sel.addEventListener("change", change_teams);
+
 let team_members_sel = document.getElementById("team_members");
-team_members_sel.addEventListener("change", change_team_player);
+team_members_sel.addEventListener("change", change_team_player); //this is another way how to add an eventlistener to the option box
 </script>
 </body>
 </html>
