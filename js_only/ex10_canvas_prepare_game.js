@@ -1,11 +1,13 @@
+
+
 let game = {
     canvas: document.getElementById("field"),
-    start: function () {
+    start () {
         console.log(this.canvas);
         this.context = this.canvas.getContext("2d");
         this.clear();
         this.interval = setInterval(redraw, 20);
-        this.intervalNewEnemy = setInterval(newEnemy, 60*10);
+        this.intervalNewEnemy = setInterval(newEnemy, 600);
         this.player = new sprite(30, 30, "red", 10, 120);
         this.enemies = [];
         this.keyCode = -1; //when there is no key pressed
@@ -19,7 +21,7 @@ let game = {
             this.keyPressed = -1;
         });
     },
-    clear : function() {
+    clear() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   }
 }
