@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example 07: Console output</title>
+     <script src="data/teams_fifa22.js"></script>
+     <script src="data/players_fifa22.js"></script>
+</head>
+<body>
+Timer 1 (inline Variante) - alle 2 Sekunden
+<div id="t1" style="border: black;border-style: solid">Hier kommt der Timer-Aufruf hin</div>
+Timer 2 (Aufruf mit Parameter) - jede Sekunde
+<div id="t2" style="border: black;border-style: solid">Hier kommt der Timer-Aufruf hin</div>
+<script>
+    setInterval(function ()  {document.getElementById("t1").innerHTML = new Date().toLocaleString()}, 2000);
+    setInterval(func2, 1000, "Parameter1", "Parameter2");
+
+    function func2(p1, p2)
+    {
+        d1 = document.getElementById("t2");
+        d1.innerHTML = new Date().toLocaleString() + " " + p1 + " " + p2;
+    }
+</script>
+</body>
+</html>
