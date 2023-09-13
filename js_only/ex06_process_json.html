@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Example 05: OO-Programming</title>
      <script src="data/teams_fifa22.js"></script>
-     <script src="data/players_fifa22.js"></script>
+     <script src="data/players_fifa23.js"></script>
 </head>
 <body>
 Press <b>F12</b> to see the results
@@ -27,7 +27,7 @@ function change_teams(e)
     let t = teams_sel.options[teams_sel.selectedIndex].text; //which text is associated with the value
     console.log(v + t + e);
 
-    let team_members_sel = document.getElementById("team_members");
+    let team_members_sel = document.getElementById("team_members")
     let current_players = players.filter(p => p.Club === t); //get all players of the selected team
     console.log(current_players);
     team_members_sel.innerHTML = ""; //clear the player option box
@@ -41,13 +41,10 @@ function change_team_player(e)
     let t = player_sel.options[player_sel.selectedIndex].text;
 
     let curr_player = players.find(p => p.Name === t);
-    console.log(curr_player.PhotoUrl);
     let player_img = document.getElementById("player_img");
-    player_img.src = curr_player.PhotoUrl;
+    player_img.src = curr_player.Photo;
 
 }
-console.log(teams);
-console.log(players[10]);
 
 //fill the teams option box with the team names
 let teams_sel = document.getElementById("teams");
