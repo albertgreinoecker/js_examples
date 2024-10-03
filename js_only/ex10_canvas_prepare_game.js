@@ -18,7 +18,7 @@ let game = {
 
         window.addEventListener('keyup', (e) =>
         {
-            this.keyPressed = -1;
+            this.keyCode = -1;
         });
     },
     clear() {
